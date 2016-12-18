@@ -1,3 +1,4 @@
 {
-  "app.components.NavBar.header": "Picapture"
+  "app.components.NavBar.header": "Picapture",
+  "app.components.Footer.header": "© Eugene Davydov 2017"
 }
