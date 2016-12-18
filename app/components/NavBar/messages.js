@@ -8,6 +8,6 @@ import { defineMessages } from 'react-intl';
 export default defineMessages({
   header: {
     id: 'app.components.NavBar.header',
-    defaultMessage: 'This is the NavBar component !',
+    defaultMessage: 'Header',
   },
 });

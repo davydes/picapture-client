@@ -31,7 +31,7 @@ import LanguageProvider from 'containers/LanguageProvider';
 import '!file?name=[name].[ext]!./favicon.ico';
 import '!file?name=[name].[ext]!./manifest.json';
 import 'file?name=[name].[ext]!./.htaccess';
-import 'file?name=[name].[ext]!./.styles/bootstrap.min.css';
+import 'file?name=[name].[ext]!./styles/bootstrap.min.css';
 
 /* eslint-enable import/no-unresolved, import/extensions */
 
