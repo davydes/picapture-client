@@ -12,19 +12,22 @@
  */
 
 import React from 'react';
+import { connect } from 'react-redux';
 import NavBar from '../../components/NavBar';
 import Footer from '../../components/Footer';
+import { loginRequest } from '../../actions';
 
-export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
+class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
   static propTypes = {
     children: React.PropTypes.node,
+    onLogin: React.PropTypes.func.isRequired,
   };
 
   render() {
     return (
       <div>
-        <NavBar />
+        <NavBar onLogin={this.props.onLogin} />
         <div className="container" >
           {React.Children.toArray(this.props.children)}
         </div>
@@ -33,3 +36,11 @@ export default class App extends React.PureComponent { // eslint-disable-line re
     );
   }
 }
+
+export function mapDispatchToProps(dispatch) {
+  return {
+    onLogin: () => dispatch(loginRequest({ username: 'testuser', password: 'test pass' })),
+  };
+}
+
+export default connect(null, mapDispatchToProps)(App);

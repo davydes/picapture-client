@@ -14,7 +14,7 @@ import { Link } from 'react-router';
 import Logo from './Logo';
 import messages from './messages';
 
-function NavBar() {
+function NavBar(props) {
   return (
     <Navbar collapseOnSelect>
       <Navbar.Header>
@@ -32,6 +32,7 @@ function NavBar() {
           <NavItem eventKey={2} href="#">Articles</NavItem>
         </Nav>
         <Nav pullRight>
+          <NavItem eventKey={2} onClick={props.onLogin}>Login</NavItem>
           <NavDropdown eventKey={1} title="User" id="user-nav-dropdown">
             <MenuItem eventKey={1.1}>Uploads</MenuItem>
             <MenuItem eventKey={1.2}>Articles</MenuItem>
@@ -46,7 +47,7 @@ function NavBar() {
 }
 
 NavBar.propTypes = {
-
+  onLogin: React.PropTypes.func.isRequired,
 };
 
 export default NavBar;

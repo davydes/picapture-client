@@ -36,6 +36,7 @@ import 'file?name=[name].[ext]!./styles/bootstrap.min.css';
 /* eslint-enable import/no-unresolved, import/extensions */
 
 import configureStore from './store';
+import rootSaga from './sagas';
 
 // Import i18n messages
 import { translationMessages } from './i18n';
@@ -65,6 +66,8 @@ const rootRoute = {
   component: App,
   childRoutes: createRoutes(store),
 };
+
+rootSaga.map(store.runSaga);
 
 const render = (messages) => {
   ReactDOM.render(
